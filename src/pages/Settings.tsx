@@ -7,29 +7,29 @@ export default function Settings() {
   return (
     <div className="space-y-6">
       <PageTitle 
-        title="Settings" 
-        subtitle="Manage your account and preferences"
+        title="Настройки" 
+        subtitle="Управление учетной записью и предпочтениями"
       />
       
       <Tabs defaultValue="general">
         <TabsList className="mb-6">
-          <TabsTrigger value="general">General</TabsTrigger>
-          <TabsTrigger value="profile">Profile</TabsTrigger>
-          <TabsTrigger value="notifications">Notifications</TabsTrigger>
-          <TabsTrigger value="team">Team</TabsTrigger>
+          <TabsTrigger value="general">Общие</TabsTrigger>
+          <TabsTrigger value="profile">Профиль</TabsTrigger>
+          <TabsTrigger value="notifications">Уведомления</TabsTrigger>
+          <TabsTrigger value="team">Команда</TabsTrigger>
         </TabsList>
         
         <TabsContent value="general">
           <Card>
             <CardHeader>
-              <CardTitle>General Settings</CardTitle>
+              <CardTitle>Общие настройки</CardTitle>
               <CardDescription>
-                Manage your general account settings and preferences.
+                Управляйте общими настройками вашей учетной записи и предпочтениями.
               </CardDescription>
             </CardHeader>
             <CardContent className="p-6">
               <div className="text-center py-8 text-muted-foreground">
-                Settings configuration coming soon
+                Настройки скоро будут доступны
               </div>
             </CardContent>
           </Card>
@@ -38,14 +38,14 @@ export default function Settings() {
         <TabsContent value="profile">
           <Card>
             <CardHeader>
-              <CardTitle>Profile Settings</CardTitle>
+              <CardTitle>Настройки профиля</CardTitle>
               <CardDescription>
-                Update your profile information.
+                Обновление данных вашего профиля.
               </CardDescription>
             </CardHeader>
             <CardContent className="p-6">
               <div className="text-center py-8 text-muted-foreground">
-                Profile settings coming soon
+                Настройки профиля скоро будут доступны
               </div>
             </CardContent>
           </Card>
@@ -54,14 +54,14 @@ export default function Settings() {
         <TabsContent value="notifications">
           <Card>
             <CardHeader>
-              <CardTitle>Notification Preferences</CardTitle>
+              <CardTitle>Настройки уведомлений</CardTitle>
               <CardDescription>
-                Control how and when you receive notifications.
+                Управляйте способами и временем получения уведомлений.
               </CardDescription>
             </CardHeader>
             <CardContent className="p-6">
               <div className="text-center py-8 text-muted-foreground">
-                Notification settings coming soon
+                Настройки уведомлений скоро будут доступны
               </div>
             </CardContent>
           </Card>
@@ -70,14 +70,14 @@ export default function Settings() {
         <TabsContent value="team">
           <Card>
             <CardHeader>
-              <CardTitle>Team Management</CardTitle>
+              <CardTitle>Управление командой</CardTitle>
               <CardDescription>
-                Manage team members and permissions.
+                Управляйте участниками команды и их правами доступа.
               </CardDescription>
             </CardHeader>
             <CardContent className="p-6">
               <div className="text-center py-8 text-muted-foreground">
-                Team management coming soon
+                Управление командой скоро будет доступно
               </div>
             </CardContent>
           </Card>

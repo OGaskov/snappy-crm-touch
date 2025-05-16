@@ -5,42 +5,42 @@ const activities = [
   {
     id: 1,
     type: "contact",
-    action: "added",
-    subject: "John Doe",
-    time: "2 hours ago",
-    user: "You",
+    action: "добавил(а)",
+    subject: "Иван Петров",
+    time: "2 часа назад",
+    user: "Вы",
   },
   {
     id: 2,
     type: "task",
-    action: "completed",
-    subject: "Call with marketing team",
-    time: "4 hours ago",
-    user: "Anna K.",
+    action: "завершил(а)",
+    subject: "Звонок с маркетинговой командой",
+    time: "4 часа назад",
+    user: "Анна К.",
   },
   {
     id: 3,
     type: "deal",
-    action: "updated",
-    subject: "Software License Renewal",
-    time: "Yesterday",
-    user: "Mike P.",
+    action: "обновил(а)",
+    subject: "Продление лицензии ПО",
+    time: "Вчера",
+    user: "Михаил П.",
   },
   {
     id: 4,
     type: "contact",
-    action: "email sent",
-    subject: "Sarah Johnson",
-    time: "Yesterday",
-    user: "You",
+    action: "отправил(а) письмо",
+    subject: "Елена Сидорова",
+    time: "Вчера",
+    user: "Вы",
   },
   {
     id: 5,
     type: "task",
-    action: "created",
-    subject: "Prepare quarterly report",
-    time: "2 days ago",
-    user: "You",
+    action: "создал(а)",
+    subject: "Подготовка квартального отчёта",
+    time: "2 дня назад",
+    user: "Вы",
   },
 ];
 
@@ -48,7 +48,7 @@ export function RecentActivity() {
   return (
     <Card className="h-full">
       <CardHeader>
-        <CardTitle>Recent Activity</CardTitle>
+        <CardTitle>Недавняя активность</CardTitle>
       </CardHeader>
       <CardContent className="space-y-6 p-6">
         <div className="space-y-4">

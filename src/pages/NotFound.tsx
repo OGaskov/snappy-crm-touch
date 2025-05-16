@@ -7,12 +7,12 @@ export default function NotFound() {
     <div className="min-h-screen flex flex-col items-center justify-center p-6">
       <div className="text-center max-w-md">
         <h1 className="text-6xl font-bold mb-6">404</h1>
-        <h2 className="text-2xl font-semibold mb-3">Page Not Found</h2>
+        <h2 className="text-2xl font-semibold mb-3">Страница не найдена</h2>
         <p className="text-muted-foreground mb-6">
-          We're sorry, the page you requested could not be found. Please check the URL or return to the dashboard.
+          Извините, запрашиваемая страница не найдена. Пожалуйста, проверьте URL или вернитесь на панель управления.
         </p>
         <Button asChild>
-          <Link to="/">Return to Dashboard</Link>
+          <Link to="/">Вернуться на панель управления</Link>
         </Button>
       </div>
     </div>

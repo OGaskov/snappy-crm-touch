@@ -9,36 +9,36 @@ export default function Dashboard() {
   return (
     <div className="space-y-6">
       <PageTitle 
-        title="Dashboard" 
-        subtitle="Welcome back! Here's an overview of your CRM data."
+        title="Панель управления" 
+        subtitle="Добро пожаловать! Вот обзор данных вашей CRM."
       />
       
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
         <StatCard 
-          title="Total Contacts" 
+          title="Всего контактов" 
           value="1,254"
           icon={<Users className="h-5 w-5 text-muted-foreground" />}
-          description="Active contacts"
+          description="Активные контакты"
           trend={{ value: 12, positive: true }}
         />
         <StatCard 
-          title="Tasks Due" 
+          title="Задачи к выполнению" 
           value="17"
           icon={<Calendar className="h-5 w-5 text-muted-foreground" />}
-          description="This week"
+          description="На этой неделе"
         />
         <StatCard 
-          title="Unread Messages" 
+          title="Непрочитанные сообщения" 
           value="34"
           icon={<MessagesSquare className="h-5 w-5 text-muted-foreground" />}
-          description="In your inbox"
+          description="В вашем почтовом ящике"
           trend={{ value: 5, positive: true }}
         />
         <StatCard 
-          title="Sales Pipeline" 
-          value="$52.6K"
+          title="Воронка продаж" 
+          value="₽3.8М"
           icon={<DollarSign className="h-5 w-5 text-muted-foreground" />}
-          description="Expected revenue"
+          description="Ожидаемая выручка"
           trend={{ value: 8, positive: false }}
         />
       </div>

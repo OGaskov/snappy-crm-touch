@@ -26,32 +26,32 @@ interface SidebarItem {
 
 const sidebarItems: SidebarItem[] = [
   {
-    title: "Dashboard",
+    title: "Панель управления",
     icon: BarChart3,
     href: "/"
   },
   {
-    title: "Contacts",
+    title: "Контакты",
     icon: Users,
     href: "/contacts"
   },
   {
-    title: "Calendar",
+    title: "Календарь",
     icon: Calendar,
     href: "/calendar"
   },
   {
-    title: "Messages",
+    title: "Сообщения",
     icon: MessageSquare,
     href: "/messages"
   },
   {
-    title: "Documents",
+    title: "Документы",
     icon: FileText,
     href: "/documents"
   },
   {
-    title: "Settings",
+    title: "Настройки",
     icon: Settings,
     href: "/settings"
   }
@@ -111,12 +111,12 @@ export function Sidebar({ className }: SidebarProps) {
       <div className="p-4 border-t border-sidebar-border">
         <div className="flex items-center">
           <div className="w-8 h-8 bg-sidebar-accent rounded-full flex items-center justify-center">
-            U
+            П
           </div>
           {!collapsed && (
             <div className="ml-3">
-              <div className="text-sm font-medium">User Name</div>
-              <div className="text-xs text-sidebar-foreground/70">Admin</div>
+              <div className="text-sm font-medium">Пользователь</div>
+              <div className="text-xs text-sidebar-foreground/70">Администратор</div>
             </div>
           )}
         </div>

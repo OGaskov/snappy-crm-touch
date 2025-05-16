@@ -14,34 +14,34 @@ interface Task {
 const tasks: Task[] = [
   {
     id: 1,
-    title: "Follow up with new leads",
+    title: "Связаться с новыми лидами",
     completed: false,
     priority: "high",
-    due: "Today"
+    due: "Сегодня"
   },
   {
     id: 2,
-    title: "Prepare proposal for ABC Corp",
+    title: "Подготовить предложение для ООО «Рога и Копыта»",
     completed: false,
     priority: "high",
-    due: "Tomorrow"
+    due: "Завтра"
   },
   {
     id: 3,
-    title: "Review monthly performance",
+    title: "Пересмотреть ежемесячные показатели",
     completed: false,
     priority: "medium",
-    due: "Friday"
+    due: "Пятница"
   },
   {
     id: 4,
-    title: "Organize sales documentation",
+    title: "Организовать документацию продаж",
     completed: true,
     priority: "low",
   },
   {
     id: 5,
-    title: "Update client contact details",
+    title: "Обновить контактные данные клиентов",
     completed: true,
     priority: "low",
   }
@@ -54,12 +54,12 @@ export function TasksList() {
   return (
     <Card className="h-full">
       <CardHeader>
-        <CardTitle>Tasks</CardTitle>
+        <CardTitle>Задачи</CardTitle>
       </CardHeader>
       <CardContent className="p-6 pt-0">
         <div className="space-y-4">
           <div>
-            <h4 className="text-sm font-medium mb-3 text-muted-foreground">To Do</h4>
+            <h4 className="text-sm font-medium mb-3 text-muted-foreground">К выполнению</h4>
             <div className="space-y-2">
               {incompleteTasks.map(task => (
                 <TaskItem key={task.id} task={task} />
@@ -69,7 +69,7 @@ export function TasksList() {
           
           {completedTasks.length > 0 && (
             <div>
-              <h4 className="text-sm font-medium mb-3 text-muted-foreground">Completed</h4>
+              <h4 className="text-sm font-medium mb-3 text-muted-foreground">Выполненные</h4>
               <div className="space-y-2 opacity-70">
                 {completedTasks.map(task => (
                   <TaskItem key={task.id} task={task} />
@@ -103,9 +103,9 @@ function TaskItem({ task }: { task: Task }) {
               "px-1.5 py-0.5 rounded text-xs",
               getPriorityColor(task.priority)
             )}>
-              {task.priority}
+              {getPriorityText(task.priority)}
             </span>
-            <span className="text-muted-foreground">Due {task.due}</span>
+            <span className="text-muted-foreground">Срок: {task.due}</span>
           </div>
         )}
       </div>
@@ -123,5 +123,18 @@ function getPriorityColor(priority: string) {
       return "bg-red-100 text-red-800";
     default:
       return "bg-gray-100 text-gray-800";
+  }
+}
+
+function getPriorityText(priority: string) {
+  switch (priority) {
+    case "low":
+      return "Низкий";
+    case "medium":
+      return "Средний";
+    case "high":
+      return "Высокий";
+    default:
+      return priority;
   }
 }

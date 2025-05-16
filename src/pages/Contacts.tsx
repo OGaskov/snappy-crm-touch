@@ -6,26 +6,26 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Search, Plus, Filter } from "lucide-react";
 
 const contacts = [
-  { id: 1, name: "John Smith", email: "john@example.com", phone: "+1 234 567 890", company: "ABC Corp", status: "Customer" },
-  { id: 2, name: "Anna Johnson", email: "anna@example.com", phone: "+1 234 567 891", company: "XYZ Inc", status: "Lead" },
-  { id: 3, name: "Robert Davis", email: "robert@example.com", phone: "+1 234 567 892", company: "123 LLC", status: "Customer" },
-  { id: 4, name: "Emily Wilson", email: "emily@example.com", phone: "+1 234 567 893", company: "Tech Co", status: "Prospect" },
-  { id: 5, name: "Michael Brown", email: "michael@example.com", phone: "+1 234 567 894", company: "ABC Corp", status: "Customer" },
-  { id: 6, name: "Sarah Miller", email: "sarah@example.com", phone: "+1 234 567 895", company: "Design Studio", status: "Lead" },
-  { id: 7, name: "David Garcia", email: "david@example.com", phone: "+1 234 567 896", company: "Sales Pro", status: "Prospect" },
-  { id: 8, name: "Lisa Chen", email: "lisa@example.com", phone: "+1 234 567 897", company: "Marketing Inc", status: "Customer" },
+  { id: 1, name: "Иванов Иван", email: "ivan@example.com", phone: "+7 123 456 7890", company: "ООО «Рога и Копыта»", status: "Клиент" },
+  { id: 2, name: "Анна Петрова", email: "anna@example.com", phone: "+7 123 456 7891", company: "ЗАО «ТехноСервис»", status: "Лид" },
+  { id: 3, name: "Роберт Смирнов", email: "robert@example.com", phone: "+7 123 456 7892", company: "ИП Смирнов", status: "Клиент" },
+  { id: 4, name: "Елена Соколова", email: "elena@example.com", phone: "+7 123 456 7893", company: "ООО «ТехноПром»", status: "Потенциальный" },
+  { id: 5, name: "Михаил Кузнецов", email: "mikhail@example.com", phone: "+7 123 456 7894", company: "ООО «Рога и Копыта»", status: "Клиент" },
+  { id: 6, name: "Светлана Морозова", email: "svetlana@example.com", phone: "+7 123 456 7895", company: "Студия Дизайна", status: "Лид" },
+  { id: 7, name: "Дмитрий Волков", email: "dmitry@example.com", phone: "+7 123 456 7896", company: "ОАО «ПродажиПро»", status: "Потенциальный" },
+  { id: 8, name: "Ольга Павлова", email: "olga@example.com", phone: "+7 123 456 7897", company: "Маркетинг Инк", status: "Клиент" },
 ];
 
 export default function Contacts() {
   return (
     <div className="space-y-6">
       <PageTitle 
-        title="Contacts" 
-        subtitle="Manage your contacts and customers"
+        title="Контакты" 
+        subtitle="Управление контактами и клиентами"
         actions={
           <Button>
             <Plus className="h-4 w-4 mr-2" />
-            Add Contact
+            Добавить контакт
           </Button>
         }
       />
@@ -36,14 +36,14 @@ export default function Contacts() {
             <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
             <Input
               type="search"
-              placeholder="Search contacts..."
+              placeholder="Поиск контактов..."
               className="pl-8 w-full md:w-80"
             />
           </div>
           <div className="flex gap-2">
             <Button variant="outline">
               <Filter className="h-4 w-4 mr-2" />
-              Filter
+              Фильтр
             </Button>
           </div>
         </div>
@@ -52,12 +52,12 @@ export default function Contacts() {
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead>Name</TableHead>
+                <TableHead>Имя</TableHead>
                 <TableHead>Email</TableHead>
-                <TableHead>Phone</TableHead>
-                <TableHead>Company</TableHead>
-                <TableHead>Status</TableHead>
-                <TableHead className="w-[100px]">Actions</TableHead>
+                <TableHead>Телефон</TableHead>
+                <TableHead>Компания</TableHead>
+                <TableHead>Статус</TableHead>
+                <TableHead className="w-[100px]">Действия</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -73,7 +73,7 @@ export default function Contacts() {
                     </span>
                   </TableCell>
                   <TableCell>
-                    <Button size="sm" variant="ghost">View</Button>
+                    <Button size="sm" variant="ghost">Просмотр</Button>
                   </TableCell>
                 </TableRow>
               ))}
@@ -87,11 +87,11 @@ export default function Contacts() {
 
 function getStatusColor(status: string): string {
   switch (status) {
-    case "Customer":
+    case "Клиент":
       return "bg-green-100 text-green-800";
-    case "Lead":
+    case "Лид":
       return "bg-blue-100 text-blue-800";
-    case "Prospect":
+    case "Потенциальный":
       return "bg-amber-100 text-amber-800";
     default:
       return "bg-gray-100 text-gray-800";

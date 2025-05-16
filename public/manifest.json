@@ -2,7 +2,7 @@
 {
   "name": "SnappyCRM",
   "short_name": "SnappyCRM",
-  "description": "Modern CRM Solution for Business Management",
+  "description": "Современное CRM решение для управления бизнесом",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
