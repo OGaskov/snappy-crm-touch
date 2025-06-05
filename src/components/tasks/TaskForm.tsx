@@ -51,97 +51,143 @@ export function TaskForm({ onSubmit, onCancel }: TaskFormProps) {
   };
 
   return (
-    <Form {...form}>
-      <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-4">
-        <FormField
-          control={form.control}
-          name="title"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Название задачи</FormLabel>
-              <FormControl>
-                <Input placeholder="Введите название задачи" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-
-        <FormField
-          control={form.control}
-          name="subject"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Тема</FormLabel>
-              <FormControl>
-                <Input placeholder="Введите тему задачи" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-
-        <FormField
-          control={form.control}
-          name="assignees"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Исполнители</FormLabel>
-              <FormControl>
-                <Input placeholder="Введите исполнителей через запятую" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-
-        <FormField
-          control={form.control}
-          name="deadline"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Срок выполнения</FormLabel>
-              <FormControl>
-                <Input type="date" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-
-        <FormField
-          control={form.control}
-          name="status"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Статус</FormLabel>
-              <Select onValueChange={field.onChange} defaultValue={field.value}>
+    <div className="bg-gradient-to-br from-gray-50 to-white p-6 rounded-lg border border-gray-200">
+      <Form {...form}>
+        <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-6">
+          <FormField
+            control={form.control}
+            name="title"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="text-sm font-semibold text-gray-700">Название задачи</FormLabel>
                 <FormControl>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Выберите статус" />
-                  </SelectTrigger>
+                  <Input 
+                    placeholder="Введите название задачи" 
+                    {...field} 
+                    className="border-gray-300 focus:border-primary-500 focus:ring-primary-500 rounded-lg transition-all duration-200"
+                  />
                 </FormControl>
-                <SelectContent>
-                  <SelectItem value="новая">Новая</SelectItem>
-                  <SelectItem value="в работе">В работе</SelectItem>
-                  <SelectItem value="завершена">Завершена</SelectItem>
-                  <SelectItem value="отложена">Отложена</SelectItem>
-                </SelectContent>
-              </Select>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+                <FormMessage />
+              </FormItem>
+            )}
+          />
 
-        <div className="flex justify-end space-x-2 pt-4">
-          <Button type="button" variant="outline" onClick={onCancel}>
-            Отмена
-          </Button>
-          <Button type="submit">
-            Создать задачу
-          </Button>
-        </div>
-      </form>
-    </Form>
+          <FormField
+            control={form.control}
+            name="subject"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="text-sm font-semibold text-gray-700">Тема</FormLabel>
+                <FormControl>
+                  <Input 
+                    placeholder="Введите тему задачи" 
+                    {...field} 
+                    className="border-gray-300 focus:border-primary-500 focus:ring-primary-500 rounded-lg transition-all duration-200"
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          <FormField
+            control={form.control}
+            name="assignees"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="text-sm font-semibold text-gray-700">Исполнители</FormLabel>
+                <FormControl>
+                  <Input 
+                    placeholder="Введите исполнителей через запятую" 
+                    {...field} 
+                    className="border-gray-300 focus:border-primary-500 focus:ring-primary-500 rounded-lg transition-all duration-200"
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          <FormField
+            control={form.control}
+            name="deadline"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="text-sm font-semibold text-gray-700">Срок выполнения</FormLabel>
+                <FormControl>
+                  <Input 
+                    type="date" 
+                    {...field} 
+                    className="border-gray-300 focus:border-primary-500 focus:ring-primary-500 rounded-lg transition-all duration-200"
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          <FormField
+            control={form.control}
+            name="status"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="text-sm font-semibold text-gray-700">Статус</FormLabel>
+                <Select onValueChange={field.onChange} defaultValue={field.value}>
+                  <FormControl>
+                    <SelectTrigger className="border-gray-300 focus:border-primary-500 focus:ring-primary-500 rounded-lg transition-all duration-200">
+                      <SelectValue placeholder="Выберите статус" />
+                    </SelectTrigger>
+                  </FormControl>
+                  <SelectContent className="bg-white border border-gray-200 shadow-lg rounded-lg">
+                    <SelectItem value="новая" className="hover:bg-blue-50 focus:bg-blue-50">
+                      <span className="flex items-center">
+                        <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                        Новая
+                      </span>
+                    </SelectItem>
+                    <SelectItem value="в работе" className="hover:bg-orange-50 focus:bg-orange-50">
+                      <span className="flex items-center">
+                        <span className="w-2 h-2 bg-orange-500 rounded-full mr-2"></span>
+                        В работе
+                      </span>
+                    </SelectItem>
+                    <SelectItem value="завершена" className="hover:bg-green-50 focus:bg-green-50">
+                      <span className="flex items-center">
+                        <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                        Завершена
+                      </span>
+                    </SelectItem>
+                    <SelectItem value="отложена" className="hover:bg-red-50 focus:bg-red-50">
+                      <span className="flex items-center">
+                        <span className="w-2 h-2 bg-red-500 rounded-full mr-2"></span>
+                        Отложена
+                      </span>
+                    </SelectItem>
+                  </SelectContent>
+                </Select>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          <div className="flex justify-end space-x-3 pt-6 border-t border-gray-200">
+            <Button 
+              type="button" 
+              variant="outline" 
+              onClick={onCancel}
+              className="border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400 transition-all duration-200"
+            >
+              Отмена
+            </Button>
+            <Button 
+              type="submit"
+              className="bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105"
+            >
+              Создать задачу
+            </Button>
+          </div>
+        </form>
+      </Form>
+    </div>
   );
 }
