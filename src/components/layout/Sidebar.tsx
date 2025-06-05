@@ -10,7 +10,8 @@ import {
   FileText, 
   Settings,
   Menu,
-  X
+  X,
+  CheckSquare
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -34,6 +35,11 @@ const sidebarItems: SidebarItem[] = [
     title: "Контакты",
     icon: Users,
     href: "/contacts"
+  },
+  {
+    title: "Задачи",
+    icon: CheckSquare,
+    href: "/tasks"
   },
   {
     title: "Календарь",
