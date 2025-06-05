@@ -11,7 +11,15 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import { Plus } from "lucide-react";
+import { TaskForm } from "@/components/tasks/TaskForm";
+import { useToast } from "@/hooks/use-toast";
 
 interface Task {
   id: number;
@@ -70,11 +78,35 @@ const getStatusBadge = (status: Task["status"]) => {
 };
 
 export default function Tasks() {
-  const [tasks] = useState<Task[]>(mockTasks);
+  const [tasks, setTasks] = useState<Task[]>(mockTasks);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const { toast } = useToast();
 
   const handleCreateTask = () => {
-    console.log("Создание новой задачи");
-    // Здесь будет логика создания задачи
+    setIsDialogOpen(true);
+  };
+
+  const handleFormSubmit = (formData: any) => {
+    const newTask: Task = {
+      id: tasks.length + 1,
+      title: formData.title,
+      subject: formData.subject,
+      assignees: formData.assignees.split(',').map((name: string) => name.trim()),
+      deadline: formData.deadline,
+      status: formData.status,
+    };
+
+    setTasks([newTask, ...tasks]);
+    setIsDialogOpen(false);
+    
+    toast({
+      title: "Задача создана",
+      description: `Задача "${formData.title}" была успешно создана.`,
+    });
+  };
+
+  const handleFormCancel = () => {
+    setIsDialogOpen(false);
   };
 
   return (
@@ -126,6 +158,15 @@ export default function Tasks() {
           </TableBody>
         </Table>
       </div>
+
+      <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+        <DialogContent className="sm:max-w-[600px]">
+          <DialogHeader>
+            <DialogTitle>Создать новую задачу</DialogTitle>
+          </DialogHeader>
+          <TaskForm onSubmit={handleFormSubmit} onCancel={handleFormCancel} />
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
