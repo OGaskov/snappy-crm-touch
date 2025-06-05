@@ -10,12 +10,12 @@ interface MainLayoutProps {
 
 export function MainLayout({ children }: MainLayoutProps) {
   return (
-    <div className="flex h-screen overflow-hidden">
+    <div className="flex h-screen overflow-hidden bg-gray-50">
       <Sidebar />
       <div className="flex-1 flex flex-col overflow-hidden">
         <Header />
-        <main className="flex-1 overflow-y-auto p-6">
-          <div className="mx-auto max-w-7xl animate-fade-in">
+        <main className="flex-1 overflow-y-auto">
+          <div className="mx-auto max-w-7xl p-6">
             {children}
           </div>
         </main>

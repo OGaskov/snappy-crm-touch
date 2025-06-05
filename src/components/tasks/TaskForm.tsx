@@ -4,7 +4,6 @@ import { useForm } from 'react-hook-form';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
 import {
   Select,
   SelectContent,
@@ -51,7 +50,7 @@ export function TaskForm({ onSubmit, onCancel }: TaskFormProps) {
   };
 
   return (
-    <div className="bg-gradient-to-br from-gray-50 to-white p-6 rounded-lg border border-gray-200">
+    <div className="p-6">
       <Form {...form}>
         <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-6">
           <FormField
@@ -59,12 +58,12 @@ export function TaskForm({ onSubmit, onCancel }: TaskFormProps) {
             name="title"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-sm font-semibold text-gray-700">Название задачи</FormLabel>
+                <FormLabel className="text-sm font-medium text-gray-700">Название задачи</FormLabel>
                 <FormControl>
                   <Input 
                     placeholder="Введите название задачи" 
                     {...field} 
-                    className="border-gray-300 focus:border-primary-500 focus:ring-primary-500 rounded-lg transition-all duration-200"
+                    className="border-gray-300 focus:border-blue-500 focus:ring-blue-500 bg-white"
                   />
                 </FormControl>
                 <FormMessage />
@@ -77,12 +76,12 @@ export function TaskForm({ onSubmit, onCancel }: TaskFormProps) {
             name="subject"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-sm font-semibold text-gray-700">Тема</FormLabel>
+                <FormLabel className="text-sm font-medium text-gray-700">Тема</FormLabel>
                 <FormControl>
                   <Input 
                     placeholder="Введите тему задачи" 
                     {...field} 
-                    className="border-gray-300 focus:border-primary-500 focus:ring-primary-500 rounded-lg transition-all duration-200"
+                    className="border-gray-300 focus:border-blue-500 focus:ring-blue-500 bg-white"
                   />
                 </FormControl>
                 <FormMessage />
@@ -95,12 +94,12 @@ export function TaskForm({ onSubmit, onCancel }: TaskFormProps) {
             name="assignees"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-sm font-semibold text-gray-700">Исполнители</FormLabel>
+                <FormLabel className="text-sm font-medium text-gray-700">Исполнители</FormLabel>
                 <FormControl>
                   <Input 
                     placeholder="Введите исполнителей через запятую" 
                     {...field} 
-                    className="border-gray-300 focus:border-primary-500 focus:ring-primary-500 rounded-lg transition-all duration-200"
+                    className="border-gray-300 focus:border-blue-500 focus:ring-blue-500 bg-white"
                   />
                 </FormControl>
                 <FormMessage />
@@ -113,12 +112,12 @@ export function TaskForm({ onSubmit, onCancel }: TaskFormProps) {
             name="deadline"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-sm font-semibold text-gray-700">Срок выполнения</FormLabel>
+                <FormLabel className="text-sm font-medium text-gray-700">Срок выполнения</FormLabel>
                 <FormControl>
                   <Input 
                     type="date" 
                     {...field} 
-                    className="border-gray-300 focus:border-primary-500 focus:ring-primary-500 rounded-lg transition-all duration-200"
+                    className="border-gray-300 focus:border-blue-500 focus:ring-blue-500 bg-white"
                   />
                 </FormControl>
                 <FormMessage />
@@ -131,14 +130,14 @@ export function TaskForm({ onSubmit, onCancel }: TaskFormProps) {
             name="status"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-sm font-semibold text-gray-700">Статус</FormLabel>
+                <FormLabel className="text-sm font-medium text-gray-700">Статус</FormLabel>
                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                   <FormControl>
-                    <SelectTrigger className="border-gray-300 focus:border-primary-500 focus:ring-primary-500 rounded-lg transition-all duration-200">
+                    <SelectTrigger className="border-gray-300 focus:border-blue-500 focus:ring-blue-500 bg-white">
                       <SelectValue placeholder="Выберите статус" />
                     </SelectTrigger>
                   </FormControl>
-                  <SelectContent className="bg-white border border-gray-200 shadow-lg rounded-lg">
+                  <SelectContent className="bg-white border border-gray-200 shadow-lg">
                     <SelectItem value="новая" className="hover:bg-blue-50 focus:bg-blue-50">
                       <span className="flex items-center">
                         <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
@@ -175,13 +174,13 @@ export function TaskForm({ onSubmit, onCancel }: TaskFormProps) {
               type="button" 
               variant="outline" 
               onClick={onCancel}
-              className="border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400 transition-all duration-200"
+              className="border-gray-300 text-gray-700 hover:bg-gray-50"
             >
               Отмена
             </Button>
             <Button 
               type="submit"
-              className="bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105"
+              className="bg-blue-600 hover:bg-blue-700 text-white shadow-sm"
             >
               Создать задачу
             </Button>

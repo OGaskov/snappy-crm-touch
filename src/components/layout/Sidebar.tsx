@@ -73,18 +73,18 @@ export function Sidebar({ className }: SidebarProps) {
 
   return (
     <div className={cn(
-      "transition-all duration-300 bg-sidebar text-sidebar-foreground flex flex-col h-screen border-r border-sidebar-border",
+      "transition-all duration-300 bg-white border-r border-gray-200 flex flex-col h-screen shadow-sm",
       collapsed ? "w-16" : "w-64",
       className
     )}>
-      <div className="flex items-center justify-between p-4">
+      <div className="flex items-center justify-between p-4 border-b border-gray-200">
         {!collapsed && (
-          <div className="text-xl font-bold text-sidebar-foreground">SnappyCRM</div>
+          <div className="text-xl font-medium text-gray-900">SnappyCRM</div>
         )}
         <Button 
           variant="ghost" 
           size="icon"
-          className="text-sidebar-foreground hover:bg-sidebar-accent"
+          className="text-gray-500 hover:text-gray-700 hover:bg-gray-100"
           onClick={toggleSidebar}
         >
           {collapsed ? <Menu size={20} /> : <X size={20} />}
@@ -100,10 +100,10 @@ export function Sidebar({ className }: SidebarProps) {
               key={item.title}
               to={item.href}
               className={cn(
-                "flex items-center px-2 py-3 rounded-md transition-colors",
+                "flex items-center px-3 py-2 rounded-lg transition-all duration-200 text-sm font-medium",
                 isActive 
-                  ? "bg-sidebar-accent text-sidebar-accent-foreground" 
-                  : "text-sidebar-foreground hover:bg-sidebar-accent/50",
+                  ? "bg-blue-50 text-blue-700 shadow-sm" 
+                  : "text-gray-600 hover:bg-gray-50 hover:text-gray-900",
                 collapsed ? "justify-center" : "space-x-3"
               )}
             >
@@ -114,15 +114,15 @@ export function Sidebar({ className }: SidebarProps) {
         })}
       </nav>
       
-      <div className="p-4 border-t border-sidebar-border">
+      <div className="p-4 border-t border-gray-200">
         <div className="flex items-center">
-          <div className="w-8 h-8 bg-sidebar-accent rounded-full flex items-center justify-center">
+          <div className="w-8 h-8 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center text-sm font-medium">
             П
           </div>
           {!collapsed && (
             <div className="ml-3">
-              <div className="text-sm font-medium">Пользователь</div>
-              <div className="text-xs text-sidebar-foreground/70">Администратор</div>
+              <div className="text-sm font-medium text-gray-900">Пользователь</div>
+              <div className="text-xs text-gray-500">Администратор</div>
             </div>
           )}
         </div>
